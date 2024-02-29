@@ -1,4 +1,4 @@
-# Cost_Crafter36 Keyboard QMK Configuration
+# Cost_Crafter40 Keyboard QMK Configuration
 ## To build Firmware in GitHub Actions
 
 ### Setup
@@ -13,5 +13,5 @@
 
 
 ---
-[Cost_Crafter36 Keyboard](https://github.com/ozkan)
+[Cost_Crafter40 Keyboard](https://github.com/ozkan)
 

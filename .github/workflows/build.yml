@@ -3,9 +3,9 @@ on: [push, pull_request, workflow_dispatch]
 name: Build
 
 jobs:
-  cost_crafter36Keyboard:
+  cost_crafter40Keyboard:
     runs-on: ubuntu-latest
-    name: cost_crafter36
+    name: cost_crafter40
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -33,12 +33,12 @@ jobs:
           python3 -m pip install --user qmk
           qmk setup --yes --home .
       - name: Prepare qmk_firmware folder
-        run: cp -R cost_crafter36/ qmk_firmware/keyboards/
+        run: cp -R cost_crafter40/ qmk_firmware/keyboards/
       - name: Build cost_crafter36-keyboard firmware
         working-directory: ./qmk_firmware
-        run: qmk compile -kb cost_crafter36 -km default 
+        run: qmk compile -kb cost_crafter40 -km default 
       - name: Archive
         uses: actions/upload-artifact@v2
         with:
-          name: cost_crafter36-keyboard
-          path: qmk_firmware/cost_crafter36_default.uf2
+          name: cost_crafter40-keyboard
+          path: qmk_firmware/cost_crafter40_default.uf2
