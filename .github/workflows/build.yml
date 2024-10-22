@@ -8,11 +8,11 @@ jobs:
     name: cost_crafter40
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: recursive
       - name: Cache qmk toolchain
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: qmk-toolchain
         with:
@@ -38,7 +38,7 @@ jobs:
         working-directory: ./qmk_firmware
         run: qmk compile -kb cost_crafter40 -km default 
       - name: Archive
-        uses: actions/upload-artifact@v2
+        uses:  actions/upload-artifact@v3
         with:
           name: cost_crafter40-keyboard
           path: qmk_firmware/cost_crafter40_default.uf2
