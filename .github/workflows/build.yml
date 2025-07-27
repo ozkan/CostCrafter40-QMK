@@ -38,7 +38,7 @@ jobs:
         working-directory: ./qmk_firmware
         run: qmk compile -kb cost_crafter40 -km default 
       - name: Archive
-        uses:  awalsh128/cache-apt-pkgs-action@v1.4.3
+        uses: actions/upload-artifact@v4
         with:
           name: cost_crafter40-keyboard
           path: qmk_firmware/cost_crafter40_default.uf2
